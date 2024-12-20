@@ -140,7 +140,7 @@ if check_password():
             # Segment Customers based on simple logic
             customer_summary["Segment"] = pd.cut(
                 customer_summary["Recency"],
-                bins=[0, 30, 90, 180, 9999],
+                bins=[-1, 30, 90, 180, 9999],
                 labels=["Active", "Warm", "Cold", "Lost"],
             )
             st.write(customer_summary)
